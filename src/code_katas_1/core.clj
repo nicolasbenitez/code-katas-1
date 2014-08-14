@@ -4,6 +4,7 @@
   "Escribir una funcion que retorne solamente los numeros impares de
    una secuencia"
   [s]
+  (filter odd? s)
   )
 
 (defn nil-key
@@ -11,11 +12,11 @@
    contiene una entrada con esa clave, y su valor es nil"
   [k m])
 
-(defn range
-  "Escribir una funcion que cree una lista de enteros en un rango dado.
-   Restricciones: range"
-  [start end]
-  )
+;(defn range
+;  "Escribir una funcion que cree una lista de enteros en un rango dado.
+;   Restricciones: range"
+;  [start end]
+;  )
 
 (defn compress-sequence
   "Escribir una funcion que elimine los duplicados consecutivos
@@ -61,3 +62,7 @@
    Restricciones: zipmap"
   [k v]
   )
+
+(defn imp
+  [x]
+  (str "Hola "x))
