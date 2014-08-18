@@ -10,13 +10,21 @@
 (defn nil-key
   "Escribir una funcion que dada una clave y un mapa, devuelva true, solamente si el mapa
    contiene una entrada con esa clave, y su valor es nil"
-  [k m])
+  [k m]
+  (if (contains? m k) (=(get m k) nil) (false))
+  )
 
-;(defn range
-;  "Escribir una funcion que cree una lista de enteros en un rango dado.
-;   Restricciones: range"
-;  [start end]
-;  )
+(defn rangee
+  "Escribir una funcion que cree una lista de enteros en un rango dado.
+   Restricciones: range"
+  [start end]
+  (def lis nil)
+  (loop [x start]
+  (when (< x end)
+    (def lis (conj lis x))
+    (recur (+ x 1)))) 
+  (reverse lis)
+  )
 
 (defn compress-sequence
   "Escribir una funcion que elimine los duplicados consecutivos
@@ -28,7 +36,8 @@
   "Escribir una funcion que reciba un numero variable de parametros
    y retorne el que tenga el valor mayor
    Restricciones: max y max-key"
-  [& args])
+  [& args]
+  )
 
 (defn split-two
   "Escribir una funcion que parta una secuencia en dos partes
@@ -62,7 +71,3 @@
    Restricciones: zipmap"
   [k v]
   )
-
-(defn imp
-  [x]
-  (str "Hola "x))
