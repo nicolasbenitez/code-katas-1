@@ -1,2 +1,2 @@
-cmdhistory=["(filter-odd (3 4 5 6 7 8 9))" "\\n(imp \\"Nico\\")" "(filter-odd [1 2 3 4 5])" "(range 2 8)" "(range 0 7 2)" "(rangee 0 5)" "(implement-range 0 5)" "(range 0 5)" "(def x 1)" "(range 0 5 )" "(rango 0 5)" "(rangeMio 0 5)" "(def a (atom 10))" "(while (pos? @a) (do (println @a) (swap\! a dec)))" "(rangeMio 0 5)" "(rangeMio 5)" "(rangeMio 0 5)" "(range 0 5)" "(rangee 0 5)"]
+cmdhistory=["(filter-odd (3 4 5 6 7 8 9))" "\\n(imp \\"Nico\\")" "(filter-odd [1 2 3 4 5])"]
 eclipse.preferences.version=1
