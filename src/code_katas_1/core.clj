@@ -14,7 +14,7 @@
   (if (contains? m k) (=(get m k) nil) (false))
   )
 
-(defn rangee
+(defn implement-range
   "Escribir una funcion que cree una lista de enteros en un rango dado.
    Restricciones: range"
   [start end]
@@ -36,7 +36,9 @@
   "Escribir una funcion que reciba un numero variable de parametros
    y retorne el que tenga el valor mayor
    Restricciones: max y max-key"
-  [& args]
+  [args]
+  ;[& args]
+  (first (sort > args))
   )
 
 (defn split-two
