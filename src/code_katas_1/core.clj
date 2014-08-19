@@ -11,7 +11,7 @@
   "Escribir una funcion que dada una clave y un mapa, devuelva true, solamente si el mapa
    contiene una entrada con esa clave, y su valor es nil"
   [k m]
-  (if (contains? m k) (=(get m k) nil) (false))
+  (if (contains? m k) (= (get m k) nil) false)
   )
 
 (defn implement-range
@@ -30,15 +30,19 @@
   "Escribir una funcion que elimine los duplicados consecutivos
    de una secuencia"
   [s]
+  (def lista '())
+  (dotimes [n (count s)]  
+  (if (not=  (first lista) (get s n)) (def lista (conj lista (get s n)))))
+  (println (reverse lista))
+  ;(reverse lista)
   )
 
 (defn max-value
   "Escribir una funcion que reciba un numero variable de parametros
    y retorne el que tenga el valor mayor
    Restricciones: max y max-key"
-  [args]
-  ;[& args]
-  (first (sort > args))
+  [& args]
+  (first (sort > (seq (args))))
   )
 
 (defn split-two
