@@ -33,8 +33,7 @@
   (def lista '())
   (dotimes [n (count s)]  
   (if (not=  (first lista) (get s n)) (def lista (conj lista (get s n)))))
-  (println (reverse lista))
-  ;(reverse lista)
+  (reverse lista)
   )
 
 (defn max-value
@@ -57,12 +56,18 @@
    luego el segundo de cada una, luego el tercero, etc.
    Restricciones: interleave"
   [s1 s2]
+  (lazy-seq
+      (let [a (seq s1) b (seq s2)]
+        (when (and a b)
+          (cons (first a) (cons (first b) (interleave (rest a) (rest b)))))
+       ))
   )
 
 (defn retrieve-caps
   "Escribir una funcion que reciba un string y devuelva un nuevo string conteniendo
    solamente las mayusculas."
   [text]
+  (filter #(Character/isUpperCase %) text)
   )
 
 (defn find-truth
@@ -78,4 +83,10 @@
    construya un mapa a partir de ellos.
    Restricciones: zipmap"
   [k v]
-  )
+  ((fn maprec [mapa k2 v2]
+     (if (and (empty? k2) (empty? v2)) mapa 
+     (maprec (assoc mapa (first k2) (first v2)) (rest k2) (rest v2))))
+     {} 
+     (if (> (count k)(count v))(rest(reverse k)) (reverse k)) 
+     (if (< (count k) (count v)) (rest(reverse v)) (reverse v)))
+  ) 
