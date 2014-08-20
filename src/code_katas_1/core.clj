@@ -41,7 +41,7 @@
    y retorne el que tenga el valor mayor
    Restricciones: max y max-key"
   [& args]
-  (first (sort > (seq (args))))
+  (first (sort > (seq args)))
   )
 
 (defn split-two
@@ -67,7 +67,7 @@
   "Escribir una funcion que reciba un string y devuelva un nuevo string conteniendo
    solamente las mayusculas."
   [text]
-  (filter #(Character/isUpperCase %) text)
+  (apply str (filter #(Character/isUpperCase %) text))
   )
 
 (defn find-truth
